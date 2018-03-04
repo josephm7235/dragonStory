@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Project Gen</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script>
+  $(function(){
+     $('#vegeta').hide();
+    $('button').click(function() {
+      var power = $('#powerLevel').val();
+      console.log(power);
+      var name = $('#realName').val();
+      var fName = $('#fanName').val();
+
+      var race = $('input[name=player]:checked').val();
+      console.log(race);
+      if (race == "sayian") {
+        var story = "You were once a human named " + name + " but after you've died the Ox king reicarnated you into as" + fName + "a sayian as the last of your kind with your kind you must defeat the freiza with your " + power + " power level";
+        $('p').html(story).css('color', 'blue');
+        $('#vegeta').show();
+      }
+      if (race == "namekian") {
+        var story = "You were once a human named " + name + " but after you've died those on Planet Namek reicarnated you into as " + fName + " a namekian of the warrior clan. You must work to raise " + power + " power level in time before Freiza arrive to blow up the planet";
+        $('p').html(story).css('color', 'green');
+         $('#vegeta').hide();
+      }
+      if (race == "human") {
+        var story = "You were one of the greatest martial artist alive a human named " + name + " many know you as " + fName + " a human with many unheard of techiques. You use your " + power + " power level to help those in need";
+        $('p').html(story).css('color', 'black');
+         $('#vegeta').hide();
+      }
+      if (race == "fD") {
+        var story = "You were once a human named " + name + " but your cruel heart allowed you to become " + fName + " a follower of freiza you go around spreading havok with your " + power + " power level. Killing and hurting those that once cared about you";
+        $('p').html(story).css('color', 'purple');
+         $('#vegeta').hide();
+        
+      }
+      if (race == "android") {
+        var story = "You were once a human named " + name + " but as a child the evil Dr. Gero took you and remodeled you into a android named " + fName + " a android seeking their past. You must track down Gero with your " + power + " power level";
+        $('p').html(story).css('color', 'red');
+         $('#vegeta').hide();
+      }
+    });
+  });
+  </script>
+</head>
+
+<body>
+  Name: <input id="realName"><br> Fantasty Name <input id="fanName"><br>
+  <input type="radio" name="player" value="human"> Human<input type="radio" name="player" value="namekian"> Namekian <input type="radio" name="player" value="sayian"> Sayian <input type="radio" name="player" value="android"> Android <input type="radio"
+    name="player" value="fD"> Frost Demon <br> power level <input id="powerLevel"><br>
+    <img id="vegeta" src="vegeta.jpg" alt="veg" style="width:400px;height400px">
+  <button>Start your journey</button>
+  <p></p>
+</body>
+
+</html>
